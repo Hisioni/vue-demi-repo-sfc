@@ -1,0 +1,13 @@
+{
+  "name": "lib-v2.7",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue2": "^2.0.1",
+    "@vue/compiler-sfc": "~2.7.14",
+    "vue": "~2.7.14"
+  }
+}

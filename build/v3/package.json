@@ -1,0 +1,16 @@
+{
+  "name": "lib-v3",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.2.0",
+    "@vue/compiler-sfc": "^3.2.45",
+    "vue": "^3.2.45"
+  }
+}

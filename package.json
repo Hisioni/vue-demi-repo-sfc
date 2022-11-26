@@ -1,0 +1,54 @@
+{
+  "name": "vue-demi-repo-sfc",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.17.0",
+  "description": "It's build with vue-demi sfc repo",
+  "files": [
+    "dist",
+    "scripts"
+  ],
+  "types": "dist/index.d.ts",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "style": "dist/style.css",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "scripts": {
+    "postinstall": "node ./scripts/postinstall.js",
+    "build": "rimraf ./dist && pnpm run build:2 && pnpm run build:2.7 && pnpm run build:3",
+    "build:2": "vue-demi-switch 2 vue2 && pnpm --filter lib-v2 build",
+    "build:2.7": "vue-demi-switch 2.7 vue2.7 && pnpm --filter lib-v2.7 build",
+    "build:3": "vue-demi-switch 3 vue3 && pnpm --filter lib-v3 build"
+  },
+  "workspaces": [
+    "build/*",
+    "playground/*"
+  ],
+  "peerDependencies": {
+    "@vue/composition-api": "^1.7.1"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "vue-demi": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.4",
+    "vue2": "npm:vue@~2.6",
+    "vue2.7": "npm:vue@~2.7",
+    "vue3": "npm:vue@3"
+  }
+}
